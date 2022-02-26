@@ -6,6 +6,6 @@ publish = ".next"
 package = "@netlify/plugin-nextjs"
 
 [template.environment]
-NEXTAUTH_SECRET = "008d6058e6f8740dc0773d8c2d5c889e"
+NEXTAUTH_SECRET = ""
 DATABASE_URL = ""
 NEXTAUTH_URL = ""

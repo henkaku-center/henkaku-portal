@@ -46,8 +46,8 @@ export default function Page({ csrfToken }) {
             <div className="sm:mx-auto sm:w-full sm:max-w-md text-center py-12">
                 <Image
                     className="h-16 w-16 mx-auto"
-                    src="/assets/unchain.png"
-                    alt="Unchain Logo"
+                    src="/assets/henkaku.png"
+                    alt="henkaku Logo"
                     height={60}
                     width={60}
                 />

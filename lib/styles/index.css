@@ -9,44 +9,12 @@
 
 @layer base {
     blockquote {
-        @apply my-6 p-2 rounded-md bg-neutral-100;
+        @apply bg-gray-200;
+        @apply my-6 p-2;
         @apply overflow-auto break-words;
     }
-
-    h1 {
-        @apply text-neutral-200 text-3xl laptop:text-6xl font-bold;
-    }
-
-    h2 {
-        @apply text-neutral-400 laptop:text-4xl font-bold;
-    }
-
-    h3 {
-        @apply text-neutral-300 text-xl font-semibold;
-    }
-
-    code{
-        @apply bg-neutral-500 text-gray-300;
-        @apply py-1 px-2;
-        @apply rounded;
-    }
-
-    pre{
-        @apply bg-neutral-500 text-gray-300;
-        @apply py-1 px-2;
-        @apply rounded;
-    }
-
     a {
         @apply text-blue-300;
-    }
-
-    p {
-        @apply text-neutral-400 leading-10;
-    }
-    
-    li {
-        @apply text-neutral-400 leading-10 list-disc list-inside;
     }
 }
 
@@ -91,12 +59,6 @@
     }
     .invalid{
         @apply text-warning-500
-    }
-    .card {
-        @apply rounded-lg aspect-auto drop-shadow-xl p-2;
-    }
-    .cardtitle {
-        @apply text-neutral-200 text-xl laptop:text-4xl font-bold;
     }
     
 

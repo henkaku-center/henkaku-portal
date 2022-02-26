@@ -100,8 +100,8 @@ export default function Page({ csrfToken, providers }) {
                 <Link href="/">
                     <Image
                         className="h-16 w-16 mx-auto"
-                        src="/assets/unchain.png"
-                        alt="Unchain Logo"
+                        src="/assets/henkaku.png"
+                        alt="henkaku Logo"
                         height={60}
                         width={60}
                     />

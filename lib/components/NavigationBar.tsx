@@ -19,8 +19,8 @@ export default function NavigationBar() {
                                 <div className="flex-shrink-0 flex items-center">
                                     <Image
                                         className="block h-8 w-8"
-                                        src="/assets/unchain.png"
-                                        alt="Unchain Logo"
+                                        src="/assets/henkaku.png"
+                                        alt="Henkaku Logo"
                                         height={60}
                                         width={60}
                                     />

@@ -27,8 +27,8 @@ const AdminLayout = (props) => {
                                 >
                                     <Image
                                         className="h-8 w-8 mx-auto"
-                                        src="/assets/unchain.png"
-                                        alt="Unchain Logo"
+                                        src="/assets/henkaku.png"
+                                        alt="henkaku Logo"
                                         height={60}
                                         width={60}
                                     />

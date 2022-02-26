@@ -22,7 +22,7 @@ const Page = () => {
     return (
         <>
             <AppLayout title="Auth">
-                <h1>Welcome to UNCHAIN developer&apos;s portal!</h1>
+                <h1>Welcome to HENKAKU community portal!</h1>
 
                 <div className="my-6 p-2">
                     <p>

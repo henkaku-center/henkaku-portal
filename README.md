@@ -1,9 +1,5 @@
-# Next.js Starter App for Netlify
-https://github.com/neila \
-&copy; Sho Hihara
-
-## Overview
-[UNCHAIN](https://app.shiftbase.xyz) developer community portal.
+# Overview
+[HENKAKU](https://community.henkaku.org) community portal.
 
 ## 🥞 Stack
 
@@ -13,3 +9,6 @@ https://github.com/neila \
 - Database - [PlanetScale](https://planetscale.com)
 - ORM - [Prisma](https://prisma.io)
 - Hosting - [Netlify](https://netlify.com)
+
+### Contributors
+cohurin / https://github.com/neila
