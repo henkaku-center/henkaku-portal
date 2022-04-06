@@ -1,5 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// primsa schema docs: https://pris.ly/d/prisma-schema
 
 datasource db {
     provider             = "mysql"
@@ -52,6 +51,8 @@ model User {
     email         String?   @unique
     password      String?
     emailVerified DateTime?
+    wallet        String?   @unique
+    discord       String?   @unique
     image         String?
     role          String?   @default("user")
     accounts      Account[]

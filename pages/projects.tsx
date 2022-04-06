@@ -4,7 +4,6 @@ import { useQuery } from 'react-query'
 import superagent from 'superagent'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import NavigationBar from '@lib/components/NavigationBar'
 
 const Page = () => {
     const { status, data: session } = useSession({
@@ -31,18 +30,9 @@ const Page = () => {
 
     console.log(withSessionQuery)
 
-    const router = useRouter()
-
-    // if(!session){
-    //     router.push('/')
-    //     return null
-    // }
-    // router.push('/home')
-    // disble server-redirect page
-
     return (
         <>
-            <AppLayout title="Server Redirect">
+            <AppLayout title="Projects">
                 <div>
                     <h1>
                         Hello, {session.user.name ?? session.user.email} This is
@@ -58,6 +48,7 @@ const Page = () => {
                         render.
                     </p>
                 </div>
+
             </AppLayout>
         </>
     )

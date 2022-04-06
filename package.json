@@ -23,18 +23,22 @@
     "@tailwindcss/forms": "^0.2.1",
     "bcryptjs": "^2.4.3",
     "classnames": "^2.3.1",
+    "cookie": "^0.4.2",
     "gray-matter": "^4.0.3",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "next": "^12.0.2",
     "next-auth": "4.0.0-beta.6",
     "next-connect": "^0.10.2",
+    "node-fetch": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.18.1",
     "react-markdown": "^8.0.0",
     "react-query": "^3.23.2",
     "remark-gfm": "^3.0.1",
-    "superagent": "^7.0.2"
+    "superagent": "^7.0.2",
+    "textlint": "^12.1.1"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} db/seed.ts"

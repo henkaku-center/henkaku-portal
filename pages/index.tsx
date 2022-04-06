@@ -3,7 +3,6 @@ import { signIn } from "next-auth/react"
 import { useSession } from 'next-auth/react'
 import Loader from '@lib/components/Loader'
 import Router from 'next/router'
-import Image from 'next/image'
 
 const Page = () => {
     const { status, data: session } = useSession({
@@ -21,19 +20,21 @@ const Page = () => {
 
     return (
         <>
-            <AppLayout title="Auth">
-                <h1>Welcome to HENKAKU community portal!</h1>
+            <div className="flex h-screen">
+                <div className="m-auto text-center">
+                    <div className="space-y-2">
+                        <h1 className="text-8xl font-extrabold">HENKAKU</h1>
+                        <h2 className="text-4xl font-light tracking-widest text-neutral-400">Discord Community Portal</h2>
+                    </div>
 
-                <div className="my-6 p-2">
-                    <p>
-                        Seems like you&apos;re still not logged in. Please 
-                        <button type="button" onClick={() => signIn()}> &nbsp;<a>login</a>&nbsp; </button> 
-                        to continue.
-                    </p>
+                    <div className="my-6 p-2">
+                        <button type="button" className="loginbtn" onClick={() => signIn()}>login</button>
+                    </div>
                 </div>
-            </AppLayout>
+            </div>
         </>
     )
 }
 
 export default Page
+

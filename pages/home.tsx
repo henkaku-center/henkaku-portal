@@ -1,10 +1,8 @@
 import AppLayout from '@lib/components/Layouts/AppLayout'
+import ProjectBanner from '@lib/components/ProjectBanner'
 import { useSession, signIn } from 'next-auth/react'
 import { useQuery } from 'react-query'
 import superagent from 'superagent'
-import Link from 'next/link'
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 const Page = () => {
     const { status, data: session } = useSession({
@@ -56,9 +54,11 @@ const Page = () => {
     return (
         <>
             <AppLayout title={session.user.name ?? session.user.email}>
+                <div></div>
                 <div className="text-center">
                     {withSessionQuery?.data && <p>{withSessionQuery.data}</p>}
                 </div>
+                <ProjectBanner />
             </AppLayout>
         </>
     )
