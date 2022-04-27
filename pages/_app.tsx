@@ -1,29 +1,17 @@
-import React from 'react'
-import type { ExtendedAppProps } from '@lib/types'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { SessionProvider } from 'next-auth/react'
-import '@lib/styles/index.css'
-import WithAuth from '@lib/auth/WithAuth'
+import { Provider } from 'next-auth/client'
+import { ChakraProvider } from '@chakra-ui/react'
+import Layout from '../components/layout'
 
-export const queryClient = new QueryClient()
+export default function App({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page)
 
-function MyApp({
-    Component,
-    pageProps: { session, ...pageProps },
-}: ExtendedAppProps) {
-    return (
-        <SessionProvider session={session} refetchInterval={5 * 60}>
-            <QueryClientProvider client={queryClient}>
-                {Component.auth ? (
-                    <WithAuth options={Component.auth}>
-                        <Component {...pageProps} />
-                    </WithAuth>
-                ) : (
-                    <Component {...pageProps} />
-                )}
-            </QueryClientProvider>
-        </SessionProvider>
-    )
+  return getLayout(
+    <Provider session={pageProps.session}>
+      <ChakraProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
+    </Provider>
+  )
 }
-
-export default MyApp

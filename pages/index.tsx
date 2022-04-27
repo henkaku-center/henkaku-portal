@@ -1,40 +1,59 @@
-import AppLayout from '@lib/components/Layouts/AppLayout'
-import { signIn } from "next-auth/react"
-import { useSession } from 'next-auth/react'
-import Loader from '@lib/components/Loader'
-import Router from 'next/router'
+import { signIn, signOut, useSession } from 'next-auth/client'
+import { VStack, Heading, Text, Button } from '@chakra-ui/react'
+import Guild from '../components/guild'
 
-const Page = () => {
-    const { status, data: session } = useSession({
-        required: false,
-    })
+export default function Page() {
+  const [session, loading] = useSession()
 
-    if (status === 'loading') {
-        return <Loader />
-    }
+  return (
+    <>
+      {!session && (
+        <VStack h={500} justify='center'>
+          <Heading as='h1' size='4xl'>
+            HENKAKU
+          </Heading>
+          <Text fontSize='5xl' color='rgba(120,120,120,0.8)'>
+            Discord Community Portal
+          </Text>
 
-    if(session){
-        Router.push('/home')
-        return null
-    }
-
-    return (
+          <Button
+            px={6}
+            h={8}
+            shadow='md'
+            color='black'
+            fontWeight='bold'
+            borderRadius='full'
+            bgGradient='linear(to-r, #6ee7b7, #60a5fa)'
+            _hover={{
+              bgGradient: 'linear(to-r,#a78bfa, #f59e0b)',
+            }}
+            onClick={() => signIn()}
+          >
+            login
+          </Button>
+        </VStack>
+      )}
+      {session && (
         <>
-            <div className="flex h-screen">
-                <div className="m-auto text-center">
-                    <div className="space-y-2">
-                        <h1 className="text-8xl font-extrabold">HENKAKU</h1>
-                        <h2 className="text-4xl font-light tracking-widest text-neutral-400">Discord Community Portal</h2>
-                    </div>
-
-                    <div className="my-6 p-2">
-                        <button type="button" className="loginbtn" onClick={() => signIn()}>login</button>
-                    </div>
-                </div>
-            </div>
+          <Guild></Guild>
+          Signed in as {session.user.email} <br />
+          <Button
+            px={6}
+            h={8}
+            shadow='md'
+            color='black'
+            fontWeight='bold'
+            borderRadius='full'
+            bgGradient='linear(to-r, #6ee7b7, #60a5fa)'
+            _hover={{
+              bgGradient: 'linear(to-r,#a78bfa, #f59e0b)',
+            }}
+            onClick={() => signOut()}
+          >
+            logout
+          </Button>
         </>
-    )
+      )}
+    </>
+  )
 }
-
-export default Page
-
