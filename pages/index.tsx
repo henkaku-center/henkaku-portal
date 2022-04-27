@@ -1,6 +1,6 @@
 import { signIn, signOut, useSession } from 'next-auth/client'
-import { VStack, Heading, Text, Box } from '@chakra-ui/react'
-import Guilds from '../components/Guilds'
+import { VStack, Heading, Text, Button } from '@chakra-ui/react'
+import Guild from '../components/guild'
 
 export default function Page() {
   const [session, loading] = useSession()
@@ -16,8 +16,7 @@ export default function Page() {
             Discord Community Portal
           </Text>
 
-          <Box
-            as='button'
+          <Button
             px={6}
             h={8}
             shadow='md'
@@ -28,18 +27,17 @@ export default function Page() {
             _hover={{
               bgGradient: 'linear(to-r,#a78bfa, #f59e0b)',
             }}
-            onClick={signIn}
+            onClick={() => signIn()}
           >
             login
-          </Box>
+          </Button>
         </VStack>
       )}
       {session && (
         <>
-          <Guilds></Guilds>
+          <Guild></Guild>
           Signed in as {session.user.email} <br />
-          <Box
-            as='button'
+          <Button
             px={6}
             h={8}
             shadow='md'
@@ -50,10 +48,10 @@ export default function Page() {
             _hover={{
               bgGradient: 'linear(to-r,#a78bfa, #f59e0b)',
             }}
-            onClick={signOut}
+            onClick={() => signOut()}
           >
             logout
-          </Box>
+          </Button>
         </>
       )}
     </>
