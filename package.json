@@ -13,7 +13,7 @@
     "db:push": "prisma db push --schema=./db/schema.prisma",
     "db:seed": "npx prisma db seed",
     "db:studio": "prisma studio --schema=./db/schema.prisma",
-    "now-build": "yarn db:generate --schema=./db/schema.prisma && next build"
+    "now-build": "yarn generate --schema=./db/schema.prisma && next build"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
