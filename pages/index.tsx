@@ -1,6 +1,5 @@
 import { signIn, signOut, useSession } from 'next-auth/client'
-import { chakra } from '@chakra-ui/react'
-import { Center, VStack, Heading, Text, Box } from '@chakra-ui/react'
+import { VStack, Heading, Text, Box } from '@chakra-ui/react'
 import Guilds from '../components/Guilds'
 
 export default function Page() {
@@ -37,9 +36,24 @@ export default function Page() {
       )}
       {session && (
         <>
-          Signed in as {session.user.email} <br />
-          <button onClick={signOut}>Sign out</button>
           <Guilds></Guilds>
+          Signed in as {session.user.email} <br />
+          <Box
+            as='button'
+            px={6}
+            h={8}
+            shadow='md'
+            color='black'
+            fontWeight='bold'
+            borderRadius='full'
+            bgGradient='linear(to-r, #6ee7b7, #60a5fa)'
+            _hover={{
+              bgGradient: 'linear(to-r,#a78bfa, #f59e0b)',
+            }}
+            onClick={signOut}
+          >
+            logout
+          </Box>
         </>
       )}
     </>
